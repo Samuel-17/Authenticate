@@ -6,9 +6,7 @@ class AuthenticateUserController {
     const { username, password } = request.body;
 
     const AuthenticateUseCase = new AuthenticateUserUseCase();
-
     const token = await AuthenticateUseCase.execute({ username, password });
-
 
     return response.json(token);
   }
